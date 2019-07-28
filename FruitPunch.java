@@ -38,7 +38,11 @@ public class FruitPunch extends Applet implements ActionListener
     int myscores[] = new int [5]; // Stores user's high scores
     JTextArea TA2, TA; // Displays score/moves left/matches left
 
-    public void init ()
+	public static void main(String args[]) {
+		new FruitPunch();
+	}
+
+    public FruitPunch ()
     {
 	resize (1000, 600);
 	p_screen = new Panel ();
@@ -59,7 +63,7 @@ public class FruitPunch extends Applet implements ActionListener
     { // opening image
 	titlescreen = new Panel ();
 	titlescreen.setBackground (new Color (201, 229, 224));
-	JButton pic = new JButton (createImageIcon ("FPtitlescreen2.jpg"));
+	JButton pic = new JButton (createImageIcon ("FPtitlescreen.jpg"));
 	pic.setActionCommand ("homescreen");
 	pic.addActionListener (this);
 	titlescreen.add (pic);
@@ -176,12 +180,12 @@ public class FruitPunch extends Applet implements ActionListener
 	Panel scoreimages = new Panel ();
 	JLabel img1 = new JLabel (createImageIcon ("4.jpg"));
 	JLabel img2 = new JLabel (createImageIcon ("5.jpg"));
-	JLabel targetscore = new JLabel (createImageIcon ("target.jpg"));
-	JLabel targetscore2 = new JLabel (createImageIcon ("invalid.jpg"));
+	//JLabel targetscore = new JLabel (createImageIcon ("target.jpg"));
+	//JLabel targetscore2 = new JLabel (createImageIcon ("invalid.jpg"));
 	scoreimages.add (img1);
 	scoreimages.add (img2);
-	scoreimages.add (targetscore);
-	scoreimages.add (targetscore2);
+	//scoreimages.add (targetscore);
+	//scoreimages.add (targetscore2);
 
 	panel.add (title);
 	title.setAlignmentX (Component.CENTER_ALIGNMENT);
@@ -824,9 +828,4 @@ public class FruitPunch extends Applet implements ActionListener
 	    return null;
 	}
     }
-
-
-
 }
-
-
